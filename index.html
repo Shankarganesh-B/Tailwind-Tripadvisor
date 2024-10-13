@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" class="p-0 m-0">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Tripadvisor</title>
+</head>
+
+<body class="box-border">
+    <!-- Header -->
+    <header class="flex flex-col justify-center items-center mb-5">
+
+        <section class="container flex justify-between items-center h-12 px-3 mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <div class="flex justify-center items-center gap-2">
+                <img class="w-10" src="./images/tripadvisor.png" alt="logo">
+                <p class="text-2xl font-bold">Tripadvisor</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+
+
+        </section>
+
+        <!-- lower part  -->
+        <section class="container  flex justify-between items-center h-16 px-3">
+            <button
+                class="border border-green-200 rounded-2xl p-1 min-w-fit px-3 flex justify-center items-center bg-white transform scale-105 transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">
+                <img class="size-7 mr-2" src="./images/Search All.png" alt="icon">
+                Search All
+            </button>
+            <button
+                class="border border-green-200 rounded-2xl p-1 min-w-fit px-3 flex justify-center items-center bg-white transform scale-105 transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">
+            <img class="size-7 mr-2" src="./images/Search All.png" alt="icon">
+                Hotels
+            </button>
+            <button
+                class="border border-green-200 rounded-2xl p-1 min-w-fit px-3 flex justify-center items-center bg-white transform scale-105 transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">
+                <img class="size-7 mr-2" src="./images/Search All.png" alt="icon">
+                Things to do
+            </button>
+            <button
+                class="border border-green-200 rounded-2xl p-1 hidden sm:flex min-w-fit px-3 justify-center items-center bg-white transform scale-105 transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">
+                <img class="size-7 mr-2" src="./images/Search All.png" alt="icon">
+                Restaurants
+            </button>
+            <button
+                class="border border-green-200 rounded-2xl p-1 hidden md:flex  min-w-fit px-3 justify-center items-center bg-white transform scale-105 transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">
+                <img class="size-7 mr-2" src="./images/Search All.png" alt="icon">
+                Flights
+            </button>
+            <button
+                class="border border-green-200 rounded-2xl p-1 hidden lg:flex min-w-fit px-3 justify-center items-center bg-white transform scale-105 transition-transform duration-300 ease-in-out transform hover:scale-110 active:scale-95">
+                <img class="size-7 mr-2" src="./images/Search All.png" alt="icon">
+                Holiday Homes
+            </button>
+        </section>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="flex justify-center items-center mb-5 sticky top-0 z-10 bg-white">
+
+        <!-- This below section for mobile version -->
+        <section
+            class="md:hidden container flex justify-center items-center h-44 px-3 w-max border shadow shadow-gray-600 border-gray-600 rounded-xl">
+            <table class="min-w-full ">
+                <tr>
+                    <td> <input class="w-96 h-11 mb-6 font-bold border-b-2 focus:outline-none px-2"
+                            placeholder="Places to go, things to do, hotels to stay, and ..."> </td>
+                </tr>
+                <tr>
+                    <td> <button class="w-96 h-11 bg-green-500 rounded-3xl font-bold text-xl">Search</button> </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- This below section for screen min width md-768 -->
+        <section
+            class="hidden container md:flex justify-center items-center h-16 px-3 border shadow shadow-gray-600 border-gray-600 rounded-full">
+            <div class="lg:justify-around flex justify-between items-center min-w-full">
+                <i class=" text-2xl p-2  text-black fa-solid fa-magnifying-glass"></i>
+                <input class=" w-4/5 p-2 focus:outline-none"
+                    placeholder="Places to go, things to do, hotels to stay at...">
+                <button class="lg:p-4 lg:px-8 bg-green-500 p-2 px-3 rounded-full ">Search</button>
+            </div>
+        </section>
+    </nav>
+
+    <!-- main -->
+    <main class="flex flex-col justify-center items-center">
+        <!-- AI sale image section -->
+        <section
+            class=" min-w-[500px] min-h-[670px] p-3 mt-2 mb-3 container flex justify-center items-center">
+
+            <!-- This below section is for mobile version sale container -->
+            <div
+                class="md:hidden text-white h-[670px] w-[500px] p-4 bg-[url('./images/mobile-sale.png')] bg-cover bg-center flex flex-col items-center pt-10">
+                <p class="font-medium">Powered by AI <button
+                        class="bg-white text-black p-1 px-2 mx-1 rounded">BETA</button></p>
+                <p class="font-bold text-3xl w-72 text-center mt-2">AI trip builder gets you out there</p>
+                <p class="font-medium w-72 text-center mt-2">Get a whole getaway's worth of ideas made for you-ready in
+                    seconds</p>
+                <button
+                    class="flex mt-3 bg-violet-300 p-3 rounded-full text-violet-950 font-semibold hover:scale-110"><svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+                    Try it</button>
+            </div>
+
+            <!-- This below version for md768 and above -->
+            <div
+                class=" mt-2 mb-3 hidden md:flex text-white h-[681px] w-[1704px] p-4 bg-[url('./images/desktop-sale.png')] bg-cover bg-center flex-col items-start justify-center pt-10 px-32">
+                <p class="font-medium mx-14 text-xl">Powered by AI <button
+                        class="bg-white text-black p-1 px-2 mx-1 rounded">BETA</button></p>
+                <p class="font-bold text-3xl w-72 text-center mt-2">AI trip builder gets you out there</p>
+                <p class="font-medium w-72 text-center mt-2">Get a whole getaway's worth of ideas made for you-ready in
+                    seconds</p>
+                <button
+                    class="flex mt-3 mx-24 bg-violet-300 p-3 rounded-full text-violet-950 font-semibold hover:scale-110"><svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                    </svg>
+                    Try it</button>
+            </div>
+        </section>
+
+        <!-- Partnership Explore section -->
+        <section class="container flex justify-center mb-4  bg-yellow-200 rounded-lg">
+            <!-- for mobile version -->
+            <div class="md:hidden flex justify-around container w-[450px] h-[450px]">
+                <img src="./images/Mobile-abu dhabi.png">
+                <div class="flex flex-col justify-center p-4 gap-6 w-[316px]">
+                    <p
+                        class="text-sm font-normal bg-yellow-100 p-2 w-fit rounded-full border border-solid border-yellow-100">
+                        In partnership with Visit Abu Dhabi</p>
+                    <p class="font-extrabold text-2xl">The Wanderer's Guide to Abu Dhabi</p>
+                    <p class="text-lg">Abu Dhabi offers stunning architecture, luxurious resorts, cultural landmarks,
+                        vibrant markets, beautiful beaches, and thrilling desert adventures for wanderers.</p>
+                    <button class="bg-green-900 rounded-full text-white text-xl w-fit p-3 px-4 bounce">Explore</button>
+                </div>
+            </div>
+            <!-- for md and larger  -->
+            <div class="hidden md:flex justify-between items-center gap-6 container w-full h-[300px] px-4">
+                <img class="w-56 lg:w-auto -rotate-6 rounded-2xl" src="./images/Desktop- Abu Dhabi.jpg">
+                <div class="flex flex-col justify-center px-8 lg:gap-3 h-full ">
+                    <p
+                        class="text-sm font-normal bg-yellow-100 p-2 w-fit rounded-full border border-solid border-amber-800">
+                        In partnership with Visit Abu Dhabi</p>
+                    <p class="font-extrabold text-xl lg:text-2xl mt-2">The Wanderer's Guide to Abu Dhabi</p>
+                    <p class="text-lg ">Abu Dhabi offers stunning architecture, luxurious resorts, cultural landmarks,
+                        vibrant markets, beautiful beaches, and thrilling desert adventures for wanderers.</p>
+                    <button
+                        class=" bg-green-900 rounded-full text-white lg:text-xl w-20 lg:w-24 h-fit p-3 px-4 bounce mt-4">Explore</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Diner section -->
+        <section class="container flex flex-col justify-between p-3 mb-4">
+            <header class="flex flex-col mb-4">
+                <h2 class="font-semibold text-2xl">Treat yourself to an award-winning meal</h2>
+                <p class="font-medium text-xl">2024's Travellers' Choice Awards Best of the Best Restaurants</p>
+            </header>
+            <main>
+                <div class="flex justify-around items-center min-h-80 min-w-[18.75rem] gap-10">
+                    <div
+                        class="hover:drop-shadow-2xl flex items-end justify-center min-w-[17.1875rem] w-[17.1875rem] h-[17.1875rem] md:min-w-[18.75rem] md:w-[18.75rem] md:h-[18.75rem] bg-[url('./images/Dine-1.png')] bg-cover rounded-2xl">
+                        
+                    <h2 class="hover:drop-shadow-2xl font-bold text-2xl text-white bg-slate-800 bg-opacity-40 w-full text-center rounded-b-2xl">Fine Dining</h2></div>
+                    <div
+                        class="hover:drop-shadow-2xl items-end justify-center hidden sm:flex min-w-[17.1875rem] w-[17.1875rem] h-[17.1875rem] md:min-w-[18.75rem] md:w-[18.75rem] md:h-[18.75rem] bg-[url('./images/Dine-2.png')] bg-cover rounded-2xl">
+                    <h2 class="font-bold text-2xl text-white bg-slate-800 bg-opacity-40 w-full text-center rounded-b-2xl">Casual Dining</h2></div>
+                    <div
+                        class="hover:drop-shadow-2xl hidden lg:flex items-end justify-center min-w-[17.1875rem] w-[17.1875rem] h-[17.1875rem] md:min-w-[18.75rem] md:w-[18.75rem] md:h-[18.75rem] bg-[url('./images/Dine-3.png')] bg-cover rounded-2xl">
+                    <h2 class="font-bold text-2xl text-white bg-slate-800 bg-opacity-40 w-full text-center rounded-b-2xl">Date Night</h2></div>
+                    <div
+                        class="hover:drop-shadow-2xl hidden 2xl:flex items-end justify-center min-w-[17.1875rem] w-[17.1875rem] h-[17.1875rem] md:min-w-[18.75rem] md:w-[18.75rem] md:h-[18.75rem] bg-[url('./images/Dine-4.png')] bg-cover rounded-2xl">
+                    <h2 class="font-bold text-2xl text-white bg-slate-800 bg-opacity-40 w-full text-center rounded-b-2xl">Vegan Dining</h2></div>
+                    <button class="sm:hidden bg-white p-5 py-6 rounded-full bounce">Next</button>
+                </div>
+            </main>
+        </section>
+
+
+        <!--Travel Inspiration Section  -->
+        <section class="container flex flex-col justify-between p-3">
+            <header class="flex flex-col gap-2 mb-4">
+                <h2 class="font-semibold text-2xl">Get Inspired by pur fave travel creators</h2>
+                <p class="text-xl">Tried-and-true guidance to fuel your next big trip</p>
+            </header>
+            <main>
+                <!-- scroll portion -->
+                <div class="w-full flex justify-around items-center gap-7">
+                    <!-- individual card -->
+                    <div class="flex flex-col justify-around items-center w-72 hover:drop-shadow-2xl">
+                        <div class="h-[11.875rem] w-[17.5rem] bg-[url('./images/T-Rome.png')]"></div>
+                        <div
+                            class="bg-yellow-100 flex flex-col gap-3 justify-center items-center h-[11.875rem] w-[17.5rem]">
+                            <p class="font-medium text-xl">By Hadrian</p>
+                            <p class="font-semibold text-xl">Rome's Moments of Grandeur</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6 text-pink-700 bg-white p-1 rounded-full">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+                            <p>30 items</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex flex-col items-center w-72 hover:drop-shadow-2xl">
+                        <div class="h-[11.875rem] w-[17.5rem] bg-[url('./images/T-Antalya.png')]"></div>
+                        <div
+                            class="bg-yellow-100 flex flex-col gap-3 justify-center items-center h-[11.875rem] w-[17.5rem]">
+                            <p class="font-medium text-xl">By Apollonius</p>
+                            <p class="font-semibold text-xl">Antalya's Ancient Allure</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6 text-pink-700 bg-white p-1 rounded-full">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+                            <p>29 items</p>
+                        </div>
+                    </div>
+                    <div class="hidden lg:flex flex-col items-center w-72 hover:drop-shadow-2xl">
+                        <div class="h-[11.875rem] w-[17.5rem] bg-[url('./images/T-Bali.png')]"></div>
+                        <div
+                            class="bg-yellow-100 flex flex-col gap-3 justify-center items-center h-[11.875rem] w-[17.5rem]">
+                            <p class="font-medium text-xl">By Nyoman Lempad</p>
+                            <p class="font-semibold text-xl">Bali's Blissful Essence</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6 text-pink-700 bg-white p-1 rounded-full">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+                            <p>32 items</p>
+                        </div>
+                    </div>
+                    <div class="hidden 2xl:flex flex-col items-center w-72  hover:drop-shadow-2xl">
+                        <div class="h-[11.875rem] w-[17.5rem] bg-[url('./images/T-Cancún.png')]"></div>
+                        <div
+                            class="bg-yellow-100 flex flex-col gap-3 justify-center items-center h-[11.875rem] w-[17.5rem]">
+                            <p class="font-medium text-xl">By Carlos Slim</p>
+                            <p class="font-semibold text-xl">Cancún's Coastal Charms</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6 text-pink-700 bg-white p-1 rounded-full">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+                            <p>50 items</p>
+                        </div>
+                    </div>
+                    <div class="hidden 2xl:flex flex-col items-center w-72 hover:drop-shadow-2xl">
+                        <div class="h-[11.875rem] w-[17.5rem] bg-[url('./images/T-Istanbul.png')]"></div>
+                        <div
+                            class="bg-yellow-100 flex flex-col gap-3 justify-center items-center h-[11.875rem] w-[17.5rem]">
+                            <p class="font-medium text-xl">By Mustafa Kemal Atatürk</p>
+                            <p class="font-semibold text-xl">Istanbul's Timeless Chronicles</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6 text-pink-700 bg-white p-1 rounded-full">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+                            <p>37 items</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <!-- City location section  -->
+        <section class="container flex flex-col justify-between p-3">
+            <header class="flex flex-col gap-2 mb-4">
+                <h2 class="font-semibold text-2xl">Ways to explore Chennai and its surroundings.</h2>
+                <p class="text-xl">Book these experiences for a close-up look at southern culture</p>
+            </header>
+            <main>
+                <!-- scroll portion -->
+                <div class="w-full flex justify-around items-center gap-8 ">
+                    <!-- individual card -->
+                    <div
+                        class="flex flex-col justify-around items-center w-[20.3125rem] hover:drop-shadow-2xl">
+                        <div class="h-[15.625rem] w-[20.3125rem] bg-[url('./images/C-Mahabalipuram.png')]"></div>
+                        <div
+                            class="bg-yellow-100 flex flex-col gap-3 justify-center items-center h-[15.625rem] w-[20.3125rem]">
+                            <p class="font-medium text-lg text-center ">Mahabalipuram & Kanchipuram in a day from Chennai by private
+                                car with guide</p>
+                            <div class="flex gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6 text-yellow-400">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                </svg>
+
+                                <p> 220</p>
+                            </div>
+                            <p>from ₹12700 per adult </p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden lg:flex flex-col justify-around items-center w-[20.3125rem] bg-blue-600 hover:drop-shadow-2xl">
+                        <div class="h-[15.625rem] w-[20.3125rem] bg-[url('./images/C-AnnaZoologicalPark.png')]"></div>
+                        <div
+                            class="bg-yellow-100 flex flex-col gap-3 justify-center items-center h-[15.625rem] w-[20.3125rem]">
+                            <p class="font-medium text-lg text-center ">Anna Zoological Park in a day from Chennai by private
+                                car with guide</p>
+                            <div class="flex gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6 text-yellow-400">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                </svg>
+
+                                <p> 220</p>
+                            </div>
+                            <p>from 5700 per adult </p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden xl:flex flex-col justify-around items-center w-[20.3125rem] bg-blue-600 hover:drop-shadow-2xl">
+                        <div class="h-[15.625rem] w-[20.3125rem] bg-[url('./images/C-Kovalam.png')]"></div>
+                        <div
+                            class="bg-yellow-100 flex flex-col gap-3 justify-center items-center h-[15.625rem] w-[20.3125rem]">
+                            <p class="font-medium text-lg text-center ">Kovalam boat ride in a day from Chennai by private
+                                speed boat with guide</p>
+                            <div class="flex gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6 text-yellow-400">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                </svg>
+
+                                <p> 220</p>
+                            </div>
+                            <p>from ₹12700 per adult </p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden 2xl:flex flex-col justify-around items-center w-[20.3125rem] bg-blue-600 hover:drop-shadow-2xl">
+                        <div class="h-[15.625rem] w-[20.3125rem] bg-[url('./images/C-Museum.png')]"></div>
+                        <div
+                            class="bg-yellow-100 flex flex-col gap-3 justify-center items-center h-[15.625rem] w-[20.3125rem]">
+                            <p class="font-medium text-lg text-center">Exploring the biological history in Chennai C-Museum with private
+                                 tour guide</p>
+                            <div class="flex gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6 text-yellow-400">
+                                    <path fill-rule="evenodd"
+                                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6 text-yellow-400">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                </svg>
+
+                                <p> 220</p>
+                            </div>
+                            <p>from ₹12700 per adult </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <!-- Autumn in Asia section -->
+        <section class="container flex flex-col justify-between p-3 mb-4">
+            <header class="flex flex-col mb-4">
+                <h2 class="font-semibold text-2xl">Autumn in Asia</h2>
+                <p class="font-medium text-xl">Cool temps, exciting festives, a world of red, yellow and oranges </p>
+            </header>
+            <main>
+                <div class="flex justify-around items-center min-h-80 min-w-[18.75rem] gap-10">
+                    <div
+                        class="hover:drop-shadow-2xl flex items-end min-w-[17.1875rem] w-[17.1875rem] h-[17.1875rem] md:min-w-[18.75rem] md:w-[18.75rem] md:h-[18.75rem] bg-[url('./images/A-China.png')] bg-cover rounded-2xl">
+                        <h2 class="font-bold text-2xl text-white bg-slate-800 bg-opacity-40 w-full text-center rounded-b-2xl">Japan</h2>
+                    </div>
+                    <div
+                        class="hover:drop-shadow-2xl items-end hidden sm:flex min-w-[17.1875rem] w-[17.1875rem] h-[17.1875rem] md:min-w-[18.75rem] md:w-[18.75rem] md:h-[18.75rem] bg-[url('./images/A-Japan.png')] bg-cover rounded-2xl">
+                        <h2 class="font-bold text-2xl text-white bg-slate-800 bg-opacity-40 w-full text-center rounded-b-2xl">China</h2>
+                    </div>
+                    <div
+                        class="hover:drop-shadow-2xl hidden lg:flex items-end min-w-[17.1875rem] w-[17.1875rem] h-[17.1875rem] md:min-w-[18.75rem] md:w-[18.75rem] md:h-[18.75rem] bg-[url('./images/A-Netherlands.png')] bg-cover rounded-2xl">
+                        <h2 class="font-bold text-2xl text-white bg-slate-800 bg-opacity-40 w-full text-center rounded-b-2xl">Netherlands</h2>
+                    </div>
+                    <div
+                        class="hover:drop-shadow-2xl hidden 2xl:flex items-end min-w-[17.1875rem] w-[17.1875rem] h-[17.1875rem] md:min-w-[18.75rem] md:w-[18.75rem] md:h-[18.75rem] bg-[url('./images/A-Vermont.png')] bg-cover rounded-2xl">
+                        <h2 class="font-bold text-2xl text-white bg-slate-800 bg-opacity-40 w-full text-center rounded-b-2xl">Vermont</h2>
+                    </div>
+                    <button class="sm:hidden bg-white p-5 py-6 rounded-full bounce bg-yellow-200">Next</button>
+                </div>
+            </main>
+        </section>
+
+        <!-- Partnership explore section -->
+        <section class="container flex justify-center mb-4 bg-yellow-200 rounded-lg">
+            <!-- for mobile version -->
+            <div class="md:hidden flex justify-around container w-[450px] h-[450px]">
+                <img src="./images/Mobile-abu dhabi.png">
+                <div class="flex flex-col justify-center p-4 gap-6  w-[316px]">
+                    <p
+                        class="text-sm font-normal bg-yellow-100 p-2 w-fit rounded-full border border-solid border-yellow-100">
+                        In partnership with Visit Abu Dhabi</p>
+                    <p class="font-extrabold text-2xl">The Wanderer's Guide to Abu Dhabi</p>
+                    <p class="text-lg">Abu Dhabi offers stunning architecture, luxurious resorts, cultural landmarks,
+                        vibrant markets, beautiful beaches, and thrilling desert adventures for wanderers.</p>
+                    <button class="bg-green-900 rounded-full text-white text-xl w-fit p-3 px-4 bounce">Explore</button>
+                </div>
+            </div>
+            <!-- for md and larger  -->
+            <div class="hidden md:flex justify-between items-center gap-6 container w-full h-[300px] px-4">
+                <img class="w-56 lg:w-auto -rotate-6 rounded-2xl" src="./images/Desktop- Abu Dhabi.jpg">
+                <div class="flex flex-col justify-center px-8 lg:gap-3 h-full ">
+                    <p
+                        class="text-sm font-normal bg-yellow-100 p-2 w-fit rounded-full border border-solid border-yellow-100">
+                        In partnership with Visit Abu Dhabi</p>
+                    <p class="font-extrabold text-xl lg:text-2xl mt-2">The Wanderer's Guide to Abu Dhabi</p>
+                    <p class="text-lg ">Abu Dhabi offers stunning architecture, luxurious resorts, cultural landmarks,
+                        vibrant markets, beautiful beaches, and thrilling desert adventures for wanderers.</p>
+                    <button
+                        class=" bg-green-900 rounded-full text-white lg:text-xl w-20 lg:w-24 h-fit p-3 px-4 bounce mt-4">Explore</button>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <!-- More to explore section. this section has full viewport width along with beige background -->
+        <section class="container:100% w-full bg-yellow-50 h-[31.25rem] py-4 px-4">
+            <h2 class="text-center font-bold text-2xl mb-5">More to explore</h2>
+            <div class="flex gap-8 justify-evenly">
+                <!-- individual cards -->
+                <div class="flex flex-col justify-around items-center w-[20.3125rem] bg-yellow-200 hover:drop-shadow-2xl">
+                    <div class="h-[15.625rem] w-[20.3125rem] bg-[url('./images/M-Bangkok.png')]"></div>
+                    <div
+                        class=" flex flex-col gap-3 justify-center items-center h-[9.375rem] w-[20.3125rem] text-center">
+                        <p class="font-medium text-lg ">7 bangkok hotels that highlight Thailands's spectacular
+                            architecture</p>
+                    </div>
+                </div>
+                <div
+                    class="hidden sm:flex flex-col justify-around items-center w-[20.3125rem] bg-yellow-200 hover:drop-shadow-2xl">
+                    <div class="h-[15.625rem] w-[20.3125rem] bg-[url('./images/M-Czech.png')]"></div>
+                    <div
+                        class=" flex flex-col gap-3 justify-center items-center h-[9.375rem] w-[20.3125rem] text-center">
+                        <p class="font-medium text-lg ">7 star hotels that highlight Czech's spectacular
+                            architecture</p>
+                    </div>
+                </div>
+                <div
+                    class="hidden lg:flex flex-col justify-around items-center w-[20.3125rem] bg-yellow-200 hover:drop-shadow-2xl">
+                    <div class="h-[15.625rem] w-[20.3125rem] bg-[url('./images/M-Norway.png')]"></div>
+                    <div
+                        class=" flex flex-col gap-3 justify-center items-center h-[9.375rem] w-[20.3125rem] text-center">
+                        <p class="font-medium text-lg ">7 camping sites that highlight Norways's spectacular
+                            architecture</p>
+                    </div>
+                </div>
+                <div
+                    class="hidden 2xl:flex flex-col justify-around items-center w-[20.3125rem] bg-yellow-200 hover:drop-shadow-2xl">
+                    <div class="h-[15.625rem] w-[20.3125rem] bg-[url('./images/M-Uzbekistan.png')]"></div>
+                    <div
+                        class=" flex flex-col gap-3 justify-center items-center h-[9.375rem] w-[20.3125rem] text-center">
+                        <p class="font-medium text-lg ">7 luxury hotels that highlight Uzbekistan's spectacular
+                            architecture</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <br>
+
+    <!-- footer -->
+    <footer class="bg-yellow-50">
+        <!-- for mobile and desktop version (changes after 1024px) with minor modification for dropdown menu-->
+        <section class="container:100% w-full">
+            <div class="flex flex-col lg:flex-row lg:items-start">
+                <div class="flex flex-col w-3/6 gap-6 mb-4 mt-4">
+                    <p class="text-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="size-6 inline mr-2">
+                            <path fill-rule="evenodd"
+                                d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                clip-rule="evenodd" />
+                        </svg> About Tripadvisor
+                    </p>
+                    <p class="text-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="size-6 inline mr-2">
+                            <path fill-rule="evenodd"
+                                d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                clip-rule="evenodd" />
+                        </svg> Explore
+                    </p>
+                    <p class="text-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="size-6 inline mr-2">
+                            <path fill-rule="evenodd"
+                                d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                clip-rule="evenodd" />
+                        </svg> Do Business With Us
+                    </p>
+                    <p class="text-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="size-6 inline mr-2">
+                            <path fill-rule="evenodd"
+                                d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                clip-rule="evenodd" />
+                        </svg> Get The App
+                    </p>
+                    <p class="text-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="size-6 inline mr-2">
+                            <path fill-rule="evenodd"
+                                d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                clip-rule="evenodd" />
+                        </svg> Tripadvisor Sites
+                </div>
+                <div class="flex px-3 gap-4 w-full text-center mt-4">
+                    <select class="w-3/6 border border-solid border-gray-500 rounded-lg h-8">
+                        <option>INR</option>
+                        <option>Yuan</option>
+                        <option>Yen</option>
+                        <option>Dirahms</option>
+                        <option>USD</option>
+                    </select>
+                    <select class="w-3/6 border border-solid border-gray-500 rounded-lg h-8">
+                        <option>Asia</option>
+                        <option>Africa</option>
+                        <option>North America</option>
+                        <option>South America</option>
+                        <option>Europe</option>
+                        <option>Australia</option>
+                    </select>
+                </div>
+                <div class="lg:hidden flex justify-center items-center gap-8 mb-4 mt-4">
+                    <img class="size-10" src="./images/instagram.png" alt="social media icon">
+                    <img class="size-9" src="./images/facebook.png" alt="social media icon">
+                    <img class="size-9" src="./images/twitter.png" alt="social media icon">
+
+                </div>
+                <div class="lg:hidden flex items-center gap-4 justify-center">
+                    <img class="w-12" src="./images/tripadvisor.png">
+                    <p>&copy; 2024 Tripadvisor LLC All rights reserved.</p>
+                </div>
+            </div>
+            <div class="hidden lg:flex justify-start items-center gap-8 mb-4 mt-4">
+                <img class="size-10" src="./images/instagram.png" alt="social media icon">
+                <img class="size-9" src="./images/facebook.png" alt="social media icon">
+                <img class="size-9" src="./images/twitter.png" alt="social media icon">
+
+            </div>
+            <div class="hidden lg:flex items-center gap-4 justify-center">
+                <img class="w-12" src="./images/tripadvisor.png">
+                <p>&copy; 2024 Tripadvisor LLC All rights reserved.</p>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+@keyframes bounce {
+    0%, 100% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(1.05);
+    }
+    60% {
+      transform: scale(1.1);
+    }
+  }
+  
+  .bounce {
+    animation: bounce ease-in 2s infinite;
+  }
+
+.scroll-box{
+    scroll-snap-type: x mandatory;
+}
+.scroll-card {
+    scroll-snap-align: start; /* Snap alignment */
+}
+  
